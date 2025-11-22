@@ -1,0 +1,30 @@
+# day2_countdown_to_45.py
+# Chris Waghorn – started learning Python at 40 on a phone
+
+from datetime import date
+
+name = input("What is your name? ")
+current_age = int(input("How old are you today? "))
+
+# YOUR BIRTHDAY ↓↓↓ (already set to 15 June)
+birth_month = 9
+birth_day   = 4
+
+today = date.today()
+this_years_bday = date(today.year, birth_month, birth_day)
+
+# If birthday already passed this year → next year
+if today > this_years_bday:
+    next_bday = date(today.year + 1, birth_month, birth_day)
+else:
+    next_bday = this_years_bday
+
+days_left = (next_bday - today).days
+
+print("────────────────────────────────────")
+print(f"Hello {name}!")
+print(f"You are {current_age} today.")
+print(f"In 5 years you’ll be {current_age + 5} and getting paid to code!")
+print(f"Only {days_left} days until your next birthday.")
+print("Keep coding every single day — the dream is getting closer!")
+print("────────────────────────────────────")
